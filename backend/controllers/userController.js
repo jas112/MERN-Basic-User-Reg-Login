@@ -6,7 +6,7 @@ const User = require('../models/userModel');
 // @desc    Register user
 // @route   POST /api/users
 // @access  Public
-const register = asyncHandler(async (req, res) => {
+const registerUser = asyncHandler(async (req, res) => {
 
     const {firstName, lastName, email, password} = req.body;
 
@@ -50,7 +50,7 @@ const register = asyncHandler(async (req, res) => {
 // @desc    Authenticate user
 // @route   POST /api/users/login
 // @access  Public
-const login = asyncHandler(async (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
 
     const { email, password } = req.body;
 
@@ -81,7 +81,7 @@ const generateToken = (id) => {
 };
 
 module.exports = {
-    register,
-    login,
+    registerUser,
+    loginUser,
     getUserNfo
 };
